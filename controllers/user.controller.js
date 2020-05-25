@@ -270,23 +270,6 @@ const getAllUsers = async function(req, res) {
     userArr.push(userObj);
 
   }
-  
-
-  // }else if(user.user_type==2){
-  //   [err, users] = await to(User.findAll({where:{isArchived:0}})); 
-  //   users.splice(users.findIndex(obj=>obj.id==req.user.id),1);
-    // [err, company_admin] = await to(CompanyAdmin.findOne({where:{user_id:user.id}}));
-    // let company_id = company_admin.toWeb().company_id ;
-    // [err, deedproviders] = await to(CompanyAdmin.findAll({where:{company_id:company_id}}));
-    // let deedprovidersIds =[];
-    // for(var k in deedproviders){
-    //   [err, userdata] = await to(User.findAll({ where: {added_by: deedproviders[k].user_id,isArchived: 0}}));
-    //   for(var i in userdata){
-    //     deedprovidersIds.push(userdata[i].toWeb());
-    //   }
-    // };
-
-    // users = deedprovidersIds;
    
   if (err) {return ReE(res, 'Unable to found any user.');}
   return ReS(res, { message: "Found all users ", users: userArr ,'count': totalCount, 'pages': pages});
